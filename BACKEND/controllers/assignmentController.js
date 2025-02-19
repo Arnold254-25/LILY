@@ -1,5 +1,5 @@
 // backend/controllers/assignmentController.js
-const Assignment = require("../models/Assignment");
+const Assignment = require("./models/Assignment");
 
 // Upload an assignment
 const uploadAssignment = async (req, res) => {
