@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const assignmentSchema = new mongoose.Schema({
-  studentID: { type: mongoose.Schema.Types.ObjectId, ref: 'User ' }, // Removed extra space
-  filename: { type: String, required: true },
-  filepath: { type: String, required: true },
-  uploadDate: { type: Date, default: Date.now },
-  assignmentTitle: { type: String, required: true },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  deadline: { type: Date, required: true },
+  file: { type: String, required: true }, // Path to the uploaded file
+  studentId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
 });
 
-module.exports = mongoose.model('Assignment', assignmentSchema);
+module.exports = mongoose.model("Assignment", assignmentSchema);
